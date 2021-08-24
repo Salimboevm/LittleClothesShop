@@ -13,9 +13,18 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   line:
-  - Hello World
-  - 1
-  - 2
-  - 3
-  - 4
-  actor: {fileID: 11400000, guid: af14102c81e7980419d6ca3dab9638b2, type: 2}
+  - line: HI
+    actor: {fileID: 11400000, guid: 15a34e3b565f70549b8926d235c6bb0a, type: 2}
+    containsQuestions: 0
+  - line: Hi
+    actor: {fileID: 11400000, guid: af14102c81e7980419d6ca3dab9638b2, type: 2}
+    containsQuestions: 0
+  - line: Would you like to buy any item?
+    actor: {fileID: 11400000, guid: af14102c81e7980419d6ca3dab9638b2, type: 2}
+    containsQuestions: 1
+  - line: Yes
+    actor: {fileID: 11400000, guid: 15a34e3b565f70549b8926d235c6bb0a, type: 2}
+    containsQuestions: 0
+  - line: No
+    actor: {fileID: 11400000, guid: 15a34e3b565f70549b8926d235c6bb0a, type: 2}
+    containsQuestions: 0

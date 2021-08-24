@@ -23,7 +23,6 @@ public class CharacterInteract : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
-
         }
     }
 
@@ -42,5 +41,11 @@ public class CharacterInteract : MonoBehaviour
                 break;
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, sizeOfInteractables);
     }
 }

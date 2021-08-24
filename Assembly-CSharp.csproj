@@ -61,10 +61,11 @@
     <Compile Include="Assets\Scripts\Dialog\Actor.cs" />
     <Compile Include="Assets\Scripts\Dialog\D_Container.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Interact\Interactable.cs" />
     <Compile Include="Assets\Scripts\Interact\ContainerInteract.cs" />
     <Compile Include="Assets\Scripts\Interact\Talk.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Answer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
