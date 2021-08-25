@@ -15,13 +15,17 @@ public class CharacterController : MonoBehaviour
     private float horizontal;
     private float vertical;
 
+    private bool canMove;
+
     public Vector2 Motion { get => motion;private set => motion = value; }
+    public bool CanMove { get => canMove;private set => canMove = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        canMove = true;
     }
     
     private void Update()
@@ -37,11 +41,16 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Move();
+        if(canMove)
+            Move();
     }
     private void Move()
     {
         rb2d.velocity = Motion * speed;
         anim.SetBool("moving", moving);
+    }
+    public bool SetCanMove(bool v)
+    {
+        return canMove = v;
     }
 }

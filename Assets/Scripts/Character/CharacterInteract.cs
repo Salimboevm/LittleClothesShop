@@ -12,6 +12,11 @@ public class CharacterInteract : MonoBehaviour
     float offset = 2f;
     [SerializeField]
     float sizeOfInteractables = 1.2f;
+
+    private bool canInteract;
+    public bool CanInteract { get => canInteract; private set => canInteract = value; }
+
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -22,7 +27,13 @@ public class CharacterInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Interact();
+            if (canInteract)
+            {
+                Interact();
+                print("hellp");
+            }
+            else
+                return;
         }
     }
 
@@ -41,6 +52,11 @@ public class CharacterInteract : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public bool SetCanInteract(bool v)
+    {
+        return canInteract = v;
     }
 
     private void OnDrawGizmos()
