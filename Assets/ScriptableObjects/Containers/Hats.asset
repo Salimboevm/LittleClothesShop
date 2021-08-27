@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bcc23051da0014caf9f2beb293b36b, type: 3}
+  m_Name: Hats
+  m_EditorClassIdentifier: 
+  player:
+  - {fileID: 21300000, guid: d813fff27c40d23428aa718d43f22d0c, type: 3}
+  - {fileID: 21300000, guid: 9d490d75859fcaf45bd6d3f914049251, type: 3}
+  - {fileID: 21300000, guid: 1de3303871946d3438f75bc6d79f424c, type: 3}
+  itemsImages:
+  - items: {fileID: 21300000, guid: d813fff27c40d23428aa718d43f22d0c, type: 3}
+    item: {fileID: 11400000, guid: 90cdd9c3731ed964d99272edd74eeace, type: 2}
+  - items: {fileID: 21300000, guid: 9d490d75859fcaf45bd6d3f914049251, type: 3}
+    item: {fileID: 11400000, guid: 6917cc8526c9c8f4384b00f850924b21, type: 2}
+  - items: {fileID: 21300000, guid: 1de3303871946d3438f75bc6d79f424c, type: 3}
+    item: {fileID: 11400000, guid: eed86c0f3d152944c971fc7cc7bd5e7d, type: 2}

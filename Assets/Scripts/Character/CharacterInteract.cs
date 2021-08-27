@@ -12,7 +12,8 @@ public class CharacterInteract : MonoBehaviour
     float offset = 2f;
     [SerializeField]
     float sizeOfInteractables = 1.2f;
-
+    [SerializeField]
+    private GameObject inventoryUI;
     private bool canInteract;
     public bool CanInteract { get => canInteract; private set => canInteract = value; }
 
@@ -30,13 +31,16 @@ public class CharacterInteract : MonoBehaviour
             if (canInteract)
             {
                 Interact();
-                print("hellp");
             }
             else
                 return;
         }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+        }
     }
-
+    
     void Interact()
     {
         Vector2 pos = rb2D.position + characterController.Motion * offset;
@@ -53,7 +57,7 @@ public class CharacterInteract : MonoBehaviour
             }
         }
     }
-
+    
     public bool SetCanInteract(bool v)
     {
         return canInteract = v;

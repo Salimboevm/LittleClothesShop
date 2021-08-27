@@ -22,9 +22,12 @@ MonoBehaviour:
   - line: Would you like to buy any item?
     actor: {fileID: 11400000, guid: af14102c81e7980419d6ca3dab9638b2, type: 2}
     containsQuestions: 1
+  - line: No
+    actor: {fileID: 11400000, guid: 15a34e3b565f70549b8926d235c6bb0a, type: 2}
+    containsQuestions: 0
   - line: Yes
     actor: {fileID: 11400000, guid: 15a34e3b565f70549b8926d235c6bb0a, type: 2}
     containsQuestions: 0
-  - line: No
-    actor: {fileID: 11400000, guid: 15a34e3b565f70549b8926d235c6bb0a, type: 2}
+  - line: Thanks. Bye
+    actor: {fileID: 11400000, guid: af14102c81e7980419d6ca3dab9638b2, type: 2}
     containsQuestions: 0

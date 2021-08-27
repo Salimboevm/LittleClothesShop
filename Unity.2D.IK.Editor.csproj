@@ -640,13 +640,13 @@
       <Project>{E0850332-CEA7-63F8-1BD1-D1389409AFA8}</Project>
       <Name>Unity.2D.IK.Runtime</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{A8EE1415-F301-258A-4BAA-87A0FB70E1FD}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{9A3E9108-25D3-C1E6-5A3D-7F72E71CC48B}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{A8EE1415-F301-258A-4BAA-87A0FB70E1FD}</Project>
+      <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{981E111B-4111-8996-1609-2E45AC894135}</Project>

@@ -9,6 +9,6 @@ public class Talk : Interactable
     D_Container container;
     public override void Interact(Character character)
     {
-        GameManager.Instance.DialogueSystem.InitDialogue(container);
+        GameManager.Instance.DialogueSystem.Init();
     }
 }

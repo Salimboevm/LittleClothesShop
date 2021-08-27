@@ -28,7 +28,15 @@ public class D_System : MonoBehaviour
     string showLine = "";//current line to show
 
     protected D_Container current_D;//current dialogue container
-    protected int currentLine;
+    private int currentLine;
+    [SerializeField]
+    D_Container container;
+    
+    private void Start()
+    {
+        InitDialogue();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -40,7 +48,7 @@ public class D_System : MonoBehaviour
     /// <summary>
     /// self explain
     /// </summary>
-    private void TypeEffect()
+    protected void TypeEffect()
     {
         if (visiblePercent >= 1f)//check visible
             return;
@@ -63,8 +71,8 @@ public class D_System : MonoBehaviour
     void UpdateInfo()
     {
         //image and name update
-        portrait.sprite = current_D.Line[currentLine].actor.Image;
-        nameT.text = current_D.Line[currentLine].actor.Name;
+        portrait.sprite = container.Line[currentLine].actor.Image;
+        nameT.text = container.Line[currentLine].actor.Name;
     }
     /// <summary>
     /// Initiator for the dialogue
@@ -78,7 +86,7 @@ public class D_System : MonoBehaviour
             return;
         }
 
-        if(currentLine >= current_D.Line.Count)//check our dialogue is not done yet
+        if(currentLine >= container.Line.Count)//check our dialogue is not done yet
         {//end dialogue
             EndDialogue();
         }
@@ -90,17 +98,18 @@ public class D_System : MonoBehaviour
     /// <summary>
     /// Read all of the lines in dialogue
     /// </summary>
-    void LoopRead()
+    public void LoopRead()
     {
+
         //show dialogue text
-        showLine = current_D.Line[currentLine].line;
+        showLine = container.Line[currentLine].line;
      
-        if(current_D.Line[currentLine].actor != null)//check actor
+        if(container.Line[currentLine].actor != null)//check actor
         {
             UpdateInfo();
         }
         //check if dialogue has any questions
-        if(current_D.Line[currentLine].containsQuestions == true)
+        if(container.Line[currentLine].containsQuestions == true)
         {
             //show buttons
             buttons.SetActive(true);
@@ -113,18 +122,25 @@ public class D_System : MonoBehaviour
         target.text = "";
         //increase current line
         currentLine += 1;
+
     }
     /// <summary>
     /// initiate dialogue 
     /// </summary>
     /// <param name="d_Container"></param>
-    public void InitDialogue(D_Container d_Container)
+    public void InitDialogue()
     {
         Show(true);//activate gameobject
-        current_D = d_Container;//get dialogue owner and container
+        //current_D = d_Container;//get dialogue owner and container
         currentLine = 0;//set current line to zero
         UpdateInfo();//update actors info
         LoopRead();//start type effect
+    }
+    public void Init()
+    {
+        Show(true);
+        currentLine = 0;
+        
     }
     /// <summary>
     /// set game object visibility
@@ -141,6 +157,7 @@ public class D_System : MonoBehaviour
     {
         Show(false);
         buttons.SetActive(false);
+        FindObjectOfType<ShopKeeper>().Reset();
     }
-
+    public int SetCurrent(int v) => currentLine += v;
 }

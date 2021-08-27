@@ -5,9 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController : MonoBehaviour
 {
-
     private Rigidbody2D rb2d;
-    private Animator anim;
     [SerializeField]
     float speed = 2f;
     bool moving = false;
@@ -24,7 +22,6 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         canMove = true;
     }
     
@@ -33,8 +30,6 @@ public class CharacterController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         Motion = new Vector2(horizontal , vertical);
-        anim.SetFloat("vertical", Input.GetAxisRaw("Vertical"));
-        anim.SetFloat("horizontal", Input.GetAxisRaw("Horizontal"));
         moving = horizontal != 0 || vertical != 0; 
     }
 
@@ -47,7 +42,6 @@ public class CharacterController : MonoBehaviour
     private void Move()
     {
         rb2d.velocity = Motion * speed;
-        anim.SetBool("moving", moving);
     }
     public bool SetCanMove(bool v)
     {
